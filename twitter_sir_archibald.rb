@@ -25,18 +25,17 @@ class Sir_Archibald
 
         potential_tweets = [
         "@#{@handle} Oh No! No manors? Get in touch and I'll try to help out.",
-        "@#{@handle} This saddens me deeply. #{@name}, I agree with you; poverty's a huge problem.",
+        "@#{@handle} This saddens me deeply. #{@name}, Everyone should own a couple of manors.",
         "@#{@handle} #{@name}, no manors? #firstworldproblems",
         "@#{@handle} #{@name}, this is truly tragic. Everyone should have at least one estate.",
         "@#{@handle} #{@name}, I am shocked to the core. Manors are important. I inherited mine.",
-        "@#{@handle} Disgusting. Everyone should have at least a couple of manors.",
-        "@#{@handle} Manors don't cost a penny - I inherited mine."
+        "@#{@handle} Disgusting. Everyone should have at least a couple of good manors.",
+        "@#{@handle} Good manors don't cost a penny - I inherited mine."
       ]
 
         random_tweet = potential_tweets.sample
         
         client.update random_tweet
-        p random_tweet
         p 'OMG. TWEETED!!!!!'
 
         p "Tweeted: #{random_tweet}"
