@@ -1,6 +1,6 @@
 #!/usr/bin/env rake
 
-require 'twitter_sir_archibald'
+require_relative './twitter_sir_archibald'
 
 task :default => 'twitter:check_new_tweets'
 
