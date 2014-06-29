@@ -23,9 +23,9 @@ class Sir_Archibald
 
     else
 
-        client.follow @handle
+      client.follow @handle
+      
       loop do
-
         potential_tweets = [
         "@#{@handle} Oh No! No manors? Get in touch and I'll try to help out.",
         "@#{@handle} This saddens me deeply. #{@name}, Everyone should own a couple of manors.",
@@ -33,12 +33,12 @@ class Sir_Archibald
         "@#{@handle} #{@name}, this is truly tragic. Everyone should have at least one estate.",
         "@#{@handle} #{@name}, I am shocked to the core. Manors are important. I inherited mine.",
         "@#{@handle} Disgusting. Everyone should have at least a couple of good manors.",
-        "@#{@handle} Good manors don't cost a penny - I inherited mine."
-        "@#{@handle} I have found, #{@name}, that manors are essential for one's own sense of wellbeing."
-        "@#{@handle} 'A life without manors is not worth living' - Sir Archibald."
-        "@#{@handle} Manors are a mark of true civilisation, #{@name}. Anything less than 800 acres is pitiful."
-        "@#{@handle} No manors? Go exploring and build some yourself."
-        "@#{@handle} Manors maketh man. As do Chateauxs and stalking lodges."
+        "@#{@handle} Good manors don't cost a penny - I inherited mine.",
+        "@#{@handle} I have found, #{@name}, that manors are essential for one's own sense of wellbeing.",
+        "@#{@handle} 'A life without manors is not worth living' - Sir Archibald.",
+        "@#{@handle} Manors are a mark of true civilisation, #{@name}. Anything less than 800 acres is pitiful.",
+        "@#{@handle} No manors? Go exploring and build some yourself.",
+        "@#{@handle} Manors maketh man. As do Chateauxs and stalking lodges.",
         "@#{@handle} Just like you, I can't stand the idea of people without manor or two."
       ]
 
@@ -51,8 +51,8 @@ class Sir_Archibald
         geo_result = Geocoder.search(t.geo.coordinates)
         @place = geo_result[0].data['formatted_address'].split(',')[-2..-1].join(',')
 
-        tweet = ["@#{@handle} I've heard that #{t.geo} has a distinct lack of stately homes too.",
-        "@#{@handle} #{@name}, #{t.geo} has very few Aristocrats; this is to be expected."]
+        tweet = ["@#{@handle} I've heard that #{@place} has a distinct lack of stately homes too.",
+        "@#{@handle} #{@name}, #{@place} has very few Aristocrats; this is to be expected."]
 
         random_tweet = tweet.sample
 
@@ -67,7 +67,7 @@ class Sir_Archibald
         p 'OMG. TWEETED!!!!!'
 
         p "Tweeted: #{random_tweet}"
-      
+
     end
   end
 end
