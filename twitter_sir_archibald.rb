@@ -35,7 +35,7 @@ class Sir_Archibald
 
         random_tweet = potential_tweets.sample
         
-        client.update random_tweet
+        client.update(random_tweet, {"in_reply_to_status_id" => t.id}) 
         p 'OMG. TWEETED!!!!!'
 
         p "Tweeted: #{random_tweet}"
