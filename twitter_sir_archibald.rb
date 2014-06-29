@@ -5,10 +5,10 @@ class Sir_Archibald
 
   def self.run_once
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV["CONSUMER_KEY"]
-      config.consumer_secret     = ENV["CONSUMER_SECRET"]
-      config.access_token        = ENV["OAUTH_TOKEN"]
-      config.access_token_secret = ENV["OAUTH_TOKEN_SECRET"]
+      config.consumer_key        = "N0cP2gbQFfqUeiEMBHEwkwpIt"
+      config.consumer_secret     = "VRhIeOt0iTCOqkHYtvvGWhqTsVTrfpD6ZmEIQcXPiJJD3QLNcy"
+      config.access_token        = "2593421125-XmaWz1yk6dac0RdIUGMVkCl6DB22VKvStHQDmn6"
+      config.access_token_secret = "MiSWcXHWvHu9gtyazrv9vtflCV2ROz2ydyRnX9hGYSbfF"
     end
 
 
@@ -23,7 +23,6 @@ class Sir_Archibald
 
     else
 
-      client.follow @handle
       
       loop do
         potential_tweets = [
@@ -42,7 +41,7 @@ class Sir_Archibald
         "@#{@handle} Just like you, I can't stand the idea of people without manor or two."
       ]
 
-        random_tweet = potential_tweets.sample
+        @random_tweet = potential_tweets.sample
 
 
       if (rand() > 0.7) && (t.geo?)
@@ -54,24 +53,26 @@ class Sir_Archibald
         tweet = ["@#{@handle} I've heard that #{@place} has a distinct lack of stately homes too.",
         "@#{@handle} #{@name}, #{@place} has very few Aristocrats; this is to be expected."]
 
-        random_tweet = tweet.sample
+        @random_tweet = tweet.sample
 
       end
 
-        break if random_tweet.length < 140
+        break if @random_tweet.length < 140
         p 'What are the chances - Im looping. OMG'
       end
 
+      client.follow @handle
         
-        client.update(random_tweet, {"in_reply_to_status_id" => t.id}) 
+        client.update(@random_tweet, {"in_reply_to_status_id" => t.id}) 
         p 'OMG. TWEETED!!!!!'
 
-        p "Tweeted: #{random_tweet}"
+        p "Tweeted: #{@random_tweet}"
 
     end
   end
 end
 
+# Sir_Archibald.run_once
 # heroku config:add CONSUMER_KEY=__CONSUMER_KEY__
 # heroku config:add CONSUMER_SECRET=__CONSUMER_SECRET__
 # heroku config:add OAUTH_TOKEN=__OAUTH_TOKEN__
