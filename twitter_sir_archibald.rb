@@ -11,7 +11,6 @@ class Sir_Archibald
         config.access_token_secret = ENV["OAUTH_TOKEN_SECRET"]
     end
 
-
     t = client.search('"no manors"', :result_type => 'recent', :lang => 'en').first
 
         @name = t.user.name.split[0]
@@ -27,7 +26,7 @@ class Sir_Archibald
       loop do
         potential_tweets = [
         "@#{@handle} Oh No! No manors? Get in touch and I'll try to help out.",
-        "@#{@handle} This saddens me deeply. #{@name}, Everyone should own a couple of manors.",
+        "@#{@handle} This saddens me deeply, #{@name}. Everyone should own a couple of manors.",
         "@#{@handle} #{@name}, no manors? #firstworldproblems",
         "@#{@handle} #{@name}, this is truly tragic. Everyone should have at least one estate.",
         "@#{@handle} #{@name}, I am shocked to the core. Manors are important. I inherited mine.",
@@ -36,7 +35,7 @@ class Sir_Archibald
         "@#{@handle} I have found, #{@name}, that manors are essential for one's own sense of wellbeing.",
         "@#{@handle} 'A life without manors is not worth living' - Sir Archibald.",
         "@#{@handle} Manors are a mark of true civilisation, #{@name}. Anything less than 800 acres is pitiful.",
-        "@#{@handle} No manors? Go exploring and build some yourself.",
+        "@#{@handle} No manors? Go exploring and create some yourself.",
         "@#{@handle} Manors maketh man. As do Chateauxs and stalking lodges.",
         "@#{@handle} Just like you, I can't stand the idea of people without manor or two."
       ]
