@@ -5,10 +5,10 @@ class Sir_Archibald
 
   def self.run_once
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = "N0cP2gbQFfqUeiEMBHEwkwpIt"
-      config.consumer_secret     = "VRhIeOt0iTCOqkHYtvvGWhqTsVTrfpD6ZmEIQcXPiJJD3QLNcy"
-      config.access_token        = "2593421125-XmaWz1yk6dac0RdIUGMVkCl6DB22VKvStHQDmn6"
-      config.access_token_secret = "MiSWcXHWvHu9gtyazrv9vtflCV2ROz2ydyRnX9hGYSbfF"
+        config.consumer_key        = ENV["CONSUMER_KEY"]
+        config.consumer_secret     = ENV["CONSUMER_SECRET"]
+        config.access_token        = ENV["OAUTH_TOKEN"]
+        config.access_token_secret = ENV["OAUTH_TOKEN_SECRET"]
     end
 
 
