@@ -1,6 +1,5 @@
 require 'twitter'
 require 'geocoder'
-require 'pry'
 require 'yaml'
 
 class Sir_Archibald
